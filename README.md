@@ -35,3 +35,7 @@ setelah itu memanggil method pengisian data menjadi list dengan method add_order
 lalu pesanan di tampilkan juga dihitung total pendapatan dan pajaknya
 
 ![alt text](image-1.png)
+
+Hasil yang didapat seperti ini
+
+![alt text](image-3.png)
