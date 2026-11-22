@@ -35,4 +35,21 @@ Setelah itu, tampilkan semua siswa dengan aturan berikut:
 * Urutkan dari grade tertinggi ke terendah
 * Untuk grade 8, 9, dan 10, tampilkan nama siswa. Jika gradenya sama, urutkan nama secara alfabetis
 * Untuk grade di bawah 8, tampilkan NULL sebagai nama. Jika gradenya sama, urutkan berdasarkan nilai dari yang terkecil
+
 Jadi yang diminta bukan menghitung rata - rata atau memilih siswa tertentu, tetapi membuat daftar semua siswa dengan grade mereka, lalu menyamarkan nama siswa yang gradenya dibawah 8 sesuai aturan tersebut.
+
+Solusi Code
+
+
+SELECT
+    CASE WHEN g.Grade < 8 THEN 'NULL' ELSE s.Name END AS Name,
+    g.Grade,
+    s.Marks
+FROM Students s
+JOIN Grades g
+    ON s.Marks BETWEEN g.Min_Mark AND g.Max_Mark
+ORDER BY
+    g.Grade DESC,
+    CASE WHEN g.Grade >= 8 THEN s.Name END ASC,
+    CASE WHEN g.Grade < 8 THEN s.Marks END ASC;
+```
