@@ -48,7 +48,7 @@ Setiap siswa memiliki nilai, dan tugas kita adalah menentukan gradenya dengan me
 
 Hasil:
 
-![alt text](<Screenshot 2026-11-21 at 22.05.43.png>)
+![alt text](<image-1.png>)
 
 
 ### Soal 2: Weather Observation Station 18
@@ -61,7 +61,7 @@ Jadi tugasnya adalah mencari empat nilai minimum dan maksimum dari kolom LAT_N d
 
 Solusi Code:
 
-![alt text](<Screenshot 2026-11-21 at 22.55.30.png>)
+![alt text](<image-2.png>)
 
 Penjelasan:
 
@@ -69,7 +69,7 @@ Query ini mencari latitude dan longitude terkecil serta terbesar, lalu menjumlah
 
 Hasil:
 
-![alt text](<Screenshot 2026-11-21 at 23.23.07.png>)
+![alt text](<image-3.png>)
 
 ### Soal 3: Top Competitor
 
@@ -77,7 +77,7 @@ Soal ini meminta membuat daftar hacker_id dan nama hacker yang berhasil mendapat
 
 Solusi Code:
 
-![alt text](<Screenshot 2026-11-21 at 23.49.55.png>)
+![alt text](<image-4.png>)
 
 Penjelasan:
 
@@ -85,7 +85,7 @@ Query ini menggambungkan tabel Hackers, Submissions, Challanges, dan Difficulty 
 
 Hasil:
 
-![alt text](<Screenshot 2026-11-22 at 07.21.39.png>)
+![alt text](<image-5.png>)
 
 ### Soal 4: Ollivanders' Inventory
 
@@ -93,7 +93,7 @@ Soal ini meminta kita mencari tongkat yangg tidak jahat (is_evil=0) dan paling m
 
 Solusi Code:
 
-![alt text](<Screenshot 2026-11-22 at 07.35.54.png>)
+![alt text](<image-6.png>)
 
 Penjelasan:
 
@@ -101,7 +101,7 @@ Menggabungkan tabel Wands dan Wands_Property agar setiap tongkat memiliki inform
 
 Hasil:
 
-![alt text](<Screenshot 2026-11-22 at 07.41.40.png>)
+![alt text](<image-7.png>)
 
 ### Soal 5: Contest Leaderboard
 
@@ -109,7 +109,7 @@ Diminta menghitung total skor setiap hacker. Jika seorang hacker mengirim bebera
 
 Solusi Code:
 
-![alt text](<Screenshot 2026-11-22 at 08.00.03.png>)
+![alt text](<image-8.png>)
 
 Penjelasan:
 
@@ -117,7 +117,7 @@ Subquery best_scores mencari skor tertinggi yang diperoleh setiap hacker untuk s
 
 Hasil:
 
-![alt text](<Screenshot 2026-11-22 at 08.14.00.png>)
+![alt text](<Simage-9.png>)
 
 
 ## Reflection Answers
