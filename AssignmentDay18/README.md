@@ -86,3 +86,40 @@ Query ini menggambungkan tabel Hackers, Submissions, Challanges, dan Difficulty 
 Hasil:
 
 ![alt text](<Screenshot 2026-11-22 at 07.21.39.png>)
+
+### Soal 4: Ollivanders' Inventory
+
+Soal ini meminta kita mencari tongkat yangg tidak jahat (is_evil=0) dan paling murah untuk setiap kombinasi usia dan kekuatan. Jika ada beberapa tongkat dengan usia dan kekuatan yang sama, pilih yang harga belinya (coins_needed) paling rendah. Setelah menemukan tongkat termurah untuk tiap kombinasi usia dan kekuatan, tampilkan ID tongkat, usia, harga, dan kekuatannya. Urutkan berdasarkan kekuatan dari tertinggi ke terendah. Jika kekuatannya sama, urutkan berdasarkan usia dari tertua ke termuda.
+
+Solusi Code:
+
+![alt text](<Screenshot 2026-11-22 at 07.35.54.png>)
+
+Penjelasan:
+
+Menggabungkan tabel Wands dan Wands_Property agar setiap tongkat memiliki informasi usia dan statusnya. Baris dengan is_evil=0 dipilih karena hanya tongkat yang tidak jahat yang diminta. Untuk setiap tongkat, subquery mencari harga terendah dari tongkat lain yang memiliki usia dan kekuatan sama serta tidak jahat. Tongkat ditampilkan jika harganya sama dengan harga terendah tersebut. Terkahir, hasil diurutkan berdasarkan kekuatan dari tertinggi ke terendah, lalu usia dari tertua ke termuda.
+
+Hasil:
+
+![alt text](<Screenshot 2026-11-22 at 07.41.40.png>)
+
+### Soal 5: Contest Leaderboard
+
+Diminta menghitung total skor setiap hacker. Jika seorang hacker mengirim beberapa submission untuk tantangan yang sama, yang dihitung hanya skor tertinggi yang ia dapatkan pada tantangan itu. Setelah menentukan skor tertinggi untuk tiap tantangan, jumlahkan skor - skor tersebut untuk setiap hacker. Tampilkan hacker_id, nama, dan total skor, tetapi jangan tampilkan hacker yang total skornya 0. Urutkan dari total skor tertinggi ke terendah, jika skornya sama, urutkan berdasarkan hacker_id terkecil lebih dulu
+
+Solusi Code:
+
+![alt text](<Screenshot 2026-11-22 at 08.00.03.png>)
+
+Penjelasan:
+
+Subquery best_scores mencari skor tertinggi yang diperoleh setiap hacker untuk setiap tantangan, supaya beberapa submission pada tantangan yang sama tidak dijumlahkan semuanya. Hasilnya kemudian digabungkan  dengan tabel Hackers untuk mengambil nama, lalu skor tertinggi dari tiap tantangan dijumlahkan per hacker. Having menyaring hacker yang total skornya lebih dari 0. Terkahir, hasil diurutkan dari total skor terbesar ke terkecil, lalu bedasarkan hacker_id terkecil jika total skornya sama.
+
+Hasil:
+
+![alt text](<Screenshot 2026-11-22 at 08.14.00.png>)
+
+
+## Reflection Answers
+1. Pada setiap soal saya membaca apa yang diinginkan/diperlukan dari soal yang disajikan yang dimana setelah itu saya membagi menjadi step step kecil. Apabila langkahnya banya, seperti mencari skor tertinggi untuk setiap hacker pada setiap tantangan lalu menjumlahkannya, saya memakai subquery agar prosesnya lebih mudah dibaca. Kalau hanya perlu mengambil nilai ringkasan, agregasi biasa sudah cukup. Saya juga belajar bahwa query yang terlihat rapi belum tentu langsung cocok dengan database yang digunakan. Contohnya query dengan CTE yang saya coba mengalami kegagalan di DB2. Setelah melihat pesan error, saya menggantinya dengan subquery. Dari situ saya belajar untuk memeriksa hasil dan pesan error, lalu menyesuaikan cara penulisan query dengan kebutuhan soal dan database.
+2. Teknik yang paling membantu saya ialah agregasi bertahap dan CASE WHEN.. Agregasi bertahap membantu saat satu data perlu diringkas lebih dulu sebelum dihitung lagi, seperti memilih skor tertinggi untuk tiap tantangan sebelum menjumlahkannya per hacker. CASE WHEN membantu mengatur hasil berdasarkan kondisi, misalnya menampilkan nama tertentu atau menggantinya dengan NULL. Saya juga sempat mengalami jawaban yang dinilai salah meskipun hasil angkanya tampak benar, karena format angka desimalnya masih menampilkan nol tambahan. Pengalaman itu mengingatkan saya untuk memeriksa bukan hanya perhitungannya, tetapi juga format hasil dan aturan database. Teknik - teknik ini berguna di pekerjaan nyata, misalnya saat membuat laporan nilai, penjualan, atau kinerja, ketika data perlu dikelompokkan, dibandingkan, lalu disajikan dengan aturan tertentu.
