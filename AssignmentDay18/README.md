@@ -2,7 +2,7 @@
 
 # Case Study Specialized SQL Techniques
 
-### Lima tantangan SQL untuk melatih agregasi, subquery, dan pengurutan data
+### Terdapat 5 soal dan 2 Reflection Question yang harus dijawab
 
 **Assignment Data Engineering DE16 · Day 18**
 
