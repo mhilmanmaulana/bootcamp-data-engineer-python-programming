@@ -41,3 +41,29 @@ Jadi yang diminta bukan menghitung rata - rata atau memilih siswa tertentu, teta
 Solusi Code:
 
 ![alt text](image.png)
+
+Penjelasan:
+
+Setiap siswa memiliki nilai, dan tugas kita adalah menentukan gradenya dengan mencocokkan nilai tersebut ke rentang nilai pada tabel Grades. Misalnya, nilai masuk ke rentang 80-89, jadi gradenya 9. Setelah itu, urutkan siswa berdasarkan grade dari tertinggi ke terendah. Untuk siswa dengan grade 8-10, tampilkan nama mereka dan urutkan secara alfabetis jika gradenya sama. Untuk siswa dengan grade di bawah 8, tampilkan NULL sebagai nama dan urutkan berdasarkan nilai  dari yang terkecil jika gradenya sama.
+
+Hasil:
+
+![alt text](<Screenshot 2026-11-21 at 22.05.43.png>)
+
+
+### Soal 2: Weather Observation Station 18
+
+Soal ini meminta kita menghitung jarak Manhattan antara dua titik yang dibuentuk dari koordinat di tabel STATION
+
+Titik pertama memakai latitude terkecil dan longitude terkecil. Titik kedua memakai latitude terbesar dan longitude terbesar. Jarak Manhattan dihitung dengan menjumlahkan selisih kedua koordinat: selisih latitude ditambah selisih longitude. Hasil akhirnya diminta dibulatkan menjadi 4 angka dibelakang koma.
+
+Jadi tugasnya adalah mencari empat nilai minimum dan maksimum dari kolom LAT_N dan LONG_W, lalu memasukkannya ke rumus jarak tersebut.
+
+Solusi Code:
+
+![alt text](<Screenshot 2026-11-21 at 22.55.30.png>)
+
+Penjelasan:
+
+Query ini mencari latitude dan longitude terkecil serta terbesar, lalu menjumlahkan selisih masing -masing koordinat untuk menghitung jarak Manhattan. Fungsi ABS memastikan selisihnya positif, sedangkat ROUND(...,4) membulatkan hasil hingga empat angkat desimal. Sebelumnya kode menghasilkan 259.68590000 : nilainya sudah benar, tetapi masih menampilkan angka nol tambahan di belakang desimal. Karena itu, CAST(....AS DECIMAL(10, 4)) digunkan agar hasilnya ditampilkan dengan empat angka desimal, yaitu 259.6859
+
