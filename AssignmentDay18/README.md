@@ -117,7 +117,7 @@ Subquery best_scores mencari skor tertinggi yang diperoleh setiap hacker untuk s
 
 Hasil:
 
-![alt text](<Simage-9.png>)
+![alt text](<image-9.png>)
 
 
 ## Reflection Answers
