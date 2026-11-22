@@ -67,3 +67,22 @@ Penjelasan:
 
 Query ini mencari latitude dan longitude terkecil serta terbesar, lalu menjumlahkan selisih masing -masing koordinat untuk menghitung jarak Manhattan. Fungsi ABS memastikan selisihnya positif, sedangkat ROUND(...,4) membulatkan hasil hingga empat angkat desimal. Sebelumnya kode menghasilkan 259.68590000 : nilainya sudah benar, tetapi masih menampilkan angka nol tambahan di belakang desimal. Karena itu, CAST(....AS DECIMAL(10, 4)) digunkan agar hasilnya ditampilkan dengan empat angka desimal, yaitu 259.6859
 
+Hasil:
+
+![alt text](<Screenshot 2026-11-21 at 23.23.07.png>)
+
+### Soal 3: Top Competitor
+
+Soal ini meminta membuat daftar hacker_id dan nama hacker yang berhasil mendapat nilai penuh pada lebih dari satu tantangan. Nilai penuh berarti nilai submission sama dengan nilai maksimum untuk tantangan tersebut. Nilai maksismum tantangan ditentukan dari tingkat kesulitannya, jadi data dari tabel Submission, Challenges, dan Difficulty perlu dicocokkan untuk mengetahui siapa yang mendapat nilai penuh. Setelah itu, hitung jumlah tantangan berbeda yang diselesaikan setiap hacker dengan nilai penuh, lalu menampilkan hanya hacker yang jumlahnya lebih dari satu. Urutkan hasil berdasarkan jumlah tersebut dari terbanyak ke tersedikit, jika jumlahnya sama, urutkan bersarkan hacker_id dari yang terkecil
+
+Solusi Code:
+
+![alt text](<Screenshot 2026-11-21 at 23.49.55.png>)
+
+Penjelasan:
+
+Query ini menggambungkan tabel Hackers, Submissions, Challanges, dan Difficulty untuk mengetahui nilai penuh dari setiap tantangan dan membandingkannya dengan nilai submission tiap hacker. Baris yang nilainya sama dengan nilai penuh akan dipilih. Setelah itu, hasil dari yang dikelompokkan perrhacker dan hanya hacker yang mendapat nilai penuh pada lebih dari satu tantangan berbeda yang ditampilkan. Terakhir, daftar diurutkan berdasarkan jumlah tantangan bernilai penuh dari terbanyak ke tersedikit, lalu berdasarlkan hacker_id dari yang terkecil jika jumlahnya sama.
+
+Hasil:
+
+![alt text](<Screenshot 2026-11-22 at 07.21.39.png>)
